@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// Create a state to hold our current query
+	const [query, setQuery] = useState('');
+	// create a state to hold our current title
+	const [title, setTitle] = useState('');
+	// create a change query handler function
+	const handleQuery = (e) => {
+		console.log(e.target.value);
+	};
+	// create fetch data function
+	return (
+		<div className="App">
+			<div>
+				<button value="milk" onClick={handleQuery}>
+					Milk
+				</button>
+				<button value="tea" onClick={handleQuery}>
+					Tea
+				</button>
+				<button value="coffee" onClick={handleQuery}>
+					Coffee
+				</button>
+			</div>
+			<div>
+				<p>{title}</p>
+			</div>
+		</div>
+	);
 }
 
 export default App;
