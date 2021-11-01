@@ -10,14 +10,18 @@ import {
 	Button,
 	Navbar,
 } from 'react-bootstrap';
-const SearchBar = () => {
-	const [query, setQuery] = useState('bitcoin');
-
+const SearchBar = ({ setQuery }) => {
 	const handleQuery = (e) => {
 		setQuery(e.target.value);
+		console.log(e.target.getAttribute('value'));
 	};
+	// const topHeadlines = () => {
+	// 	fetch(
+	// 		`https://newsapi.org/v2/top-headlines?country=us&apiKey=bb626e49c7a8499396cecb3d97f874a3`
+	// 	);
+	// };
 	return (
-		<Navbar bg="light" expand="lg">
+		<Navbar bg="dark" expand="lg" variant="dark">
 			<Container fluid>
 				<Navbar.Brand href="#">CoderNews w/ React</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
@@ -27,7 +31,7 @@ const SearchBar = () => {
 						style={{ maxHeight: '100px' }}
 						navbarScroll
 					>
-						<Nav.Link href="#action1">Home</Nav.Link>
+						<Nav.Link href="index.html">Home</Nav.Link>
 						<Nav.Link href="#action2">Top Headlines</Nav.Link>
 						<NavDropdown title="Popular" id="navbarScrollingDropdown">
 							<NavDropdown.Item
@@ -37,9 +41,21 @@ const SearchBar = () => {
 							>
 								Business
 							</NavDropdown.Item>
-							<NavDropdown.Item href="#action4">Travel</NavDropdown.Item>
+							<NavDropdown.Item
+								href="#action4"
+								value="travel"
+								onClick={handleQuery}
+							>
+								Travel
+							</NavDropdown.Item>
 							{/* <NavDropdown.Divider /> */}
-							<NavDropdown.Item href="#action5">Technology</NavDropdown.Item>
+							<NavDropdown.Item
+								href="#action5"
+								value="technology"
+								onClick={handleQuery}
+							>
+								Technology
+							</NavDropdown.Item>
 						</NavDropdown>
 					</Nav>
 					<Form className="d-flex">
@@ -48,6 +64,8 @@ const SearchBar = () => {
 							placeholder="Search"
 							className="me-2"
 							aria-label="Search"
+							onClick={handleQuery}
+							value={setQuery}
 						/>
 						<Button variant="outline-success">Search</Button>
 					</Form>

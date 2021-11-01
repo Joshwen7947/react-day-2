@@ -1,3 +1,6 @@
+body {
+	background-color: darkslateblue;
+}
 .App {
 	text-align: center;
 }
@@ -37,20 +40,48 @@
 	}
 }
 
-button {
-	border: none;
-	background-color: white;
-}
-button:hover {
-	background-color: rgb(230, 230, 230);
-}
-
 .container {
 	width: 75%;
 	margin: auto;
 	padding: 25px;
+	/* display: flex; */
 }
 
 h1 {
 	padding: 25px;
+	font-size: 1rem;
+	border: 1px solid;
+	width: 60%;
+	margin: 50px auto 10px auto;
+	color: white;
+}
+
+h1:hover {
+	cursor: pointer;
+}
+img {
+	width: 60%;
+}
+h2 {
+	font-size: 1rem;
+	width: 60%;
+	margin: auto;
+	padding: 15px;
+	color: white;
+}
+
+/* #wrap {
+	border: 2px solid;
+} */
+.navbar {
+	color: white;
+}
+/* SIDEBAR */
+.sideBar {
+	display: flex;
+	flex-direction: column;
+	width: 18%;
+}
+.sideBar button {
+	margin: 5px;
 }
